@@ -31,5 +31,12 @@ export const store = {
         event.edit = false;
       });
     });
+  },
+  updateEvent (dayId, originalEventDetails, updatedEventDetails) {
+    const dayObj = this.state.seedData.find(day => day.id === dayId);
+    const eventObj = dayObj.events.find(event => event.details === originalEventDetails );
+
+    eventObj.details = updatedEventDetails;
+    eventObj.edit = false;
   }
 }
