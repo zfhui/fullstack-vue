@@ -13,6 +13,10 @@ export const store = {
       dayObj.id === dayId ? dayObj.active = true : dayObj.active = false;
     });
   },
+  getEventObj (dayId, eventDetails) {
+    const dayObj = this.state.seedData.find(day => day.id === dayId);
+    return dayObj.events.find(event => event.details === eventDetails);
+  },
   submitEvent (eventDetails) {
     const activeDay = this.getActiveDay();
     activeDay.events.push({ "details": eventDetails, "edit": false });
@@ -20,8 +24,7 @@ export const store = {
   editEvent (dayId, eventDetails) {
     this.resetEditOfAllEvents();
 
-    const dayObj = this.state.seedData.find(day => day.id === dayId);
-    const eventObj = dayObj.events.find(event => event.details === eventDetails );
+    const eventObj = this.getEventObj(dayId, eventDetails);
 
     eventObj.edit = true;
   },
@@ -33,8 +36,7 @@ export const store = {
     });
   },
   updateEvent (dayId, originalEventDetails, updatedEventDetails) {
-    const dayObj = this.state.seedData.find(day => day.id === dayId);
-    const eventObj = dayObj.events.find(event => event.details === originalEventDetails );
+    const eventObj = this.getEventObj(dayId, originalEventDetails);
 
     eventObj.details = updatedEventDetails;
     eventObj.edit = false;
