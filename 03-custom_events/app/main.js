@@ -12,7 +12,7 @@ const inputComponent = {
       />
     `,
   props: ['placeholder'],
-  data () {
+  data() {
     return {
       input: ''
     }
@@ -35,10 +35,13 @@ const noteCountComponent = {
       Note count: <strong>{{ noteCount }}</strong>
     </div>
   `,
-  data () {
+  data() {
     return {
       noteCount: 0
     }
+  },
+  created() {
+    EventBus.$on('add-note', event => this.noteCount++);
   }
 }
 
