@@ -1,4 +1,4 @@
-# Code examples for the "Fullstack Vue" Book
+# Programming Tutorials from the "Fullstack Vue" Book
 
 ## Setup
 
@@ -17,4 +17,14 @@ Unless you have a quantum computer connected directly to an Amazon data center, 
 
 ## Running the code
 
-See the respective `README.md` for each project.
+### 01: Upvote
+
+Open `01-upvote/app/index.html` in your favourite browser. 
+
+### 02: Calendar App
+
+Read `02-calendar_app/README.md`
+
+### 03: Custom Events
+
+Open `01-upvote/app/index.html` in your favourite browser. 
