@@ -35,5 +35,11 @@ new Vue({
     notes: [],
     timestamps: [],
     placeholder: 'Enter a note'
+  },
+  methods: {
+    addNote(event) {
+      this.notes.push(event.note);
+      this.timestamps.push(even.timestamp);
+    }
   }
 })
