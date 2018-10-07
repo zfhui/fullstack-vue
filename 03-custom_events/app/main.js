@@ -39,7 +39,7 @@ new Vue({
   methods: {
     addNote(event) {
       this.notes.push(event.note);
-      this.timestamps.push(even.timestamp);
+      this.timestamps.push(event.timestamp);
     }
   }
 })
