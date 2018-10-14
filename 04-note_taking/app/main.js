@@ -1,5 +1,24 @@
 const inputComponent = {
-  template: `<input placeholder='Enter a note' class="input is-small" type="text" />`,
+  template: `
+    <input
+      placeholder='Enter a note'
+      v-model="input"
+      @keyup.enter="monitorEnterKey"
+      class="input is-small"
+      type="text" />
+  `,
+  data () {
+    return {
+      input: '',
+    }
+  },
+  methods: {
+    monitorEnterKey () {
+      this.$store.dispatch('addNote', this.input);
+      this.$store.dispatch('addTimeStamp', new Date().toLocaleString());
+      this.input = ''; // set input field back to blank
+    }
+  }
 }
 
 const state = {
@@ -19,18 +38,18 @@ const mutations = {
 }
 
 const actions = {
-  addNote (constxt, payload) {
+  addNote (context, payload) {
     context.commit('ADD_NOTE', payload);
   },
-  addTimeStamp (constxt, payload) {
+  addTimeStamp (context, payload) {
     context.commit('ADD_TIMESAMP', payload);
   }
 }
 
 const getters = {
-  getNotes: state => states.notes,
-  getTimestamps: state => states.timestamps,
-  getNoteCount: state => states.notes.length
+  getNotes: state => state.notes,
+  getTimestamps: state => state.timestamps,
+  getNoteCount: state => state.notes.length
 }
 
 
@@ -43,7 +62,7 @@ const store = new Vuex.Store({
 
 new Vue({
   el: '#app',
-  store, 
+  store,
   components: {
     'input-component': inputComponent
   }
