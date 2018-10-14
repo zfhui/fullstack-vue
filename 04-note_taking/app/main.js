@@ -1,3 +1,16 @@
+const noteCountComponent = {
+    template: `
+      <div class="note-count">
+        Note count: <strong>{{ noteCount }}</strong>
+      </div>
+    `,
+    computed: {
+      noteCount() {
+        return this.$store.getters.getNoteCount;
+      }
+    }
+}
+
 const inputComponent = {
   template: `
     <input
@@ -64,6 +77,7 @@ new Vue({
   el: '#app',
   store,
   components: {
-    'input-component': inputComponent
+    'input-component': inputComponent,
+    'note-count-component': noteCountComponent
   }
 })
