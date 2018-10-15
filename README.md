@@ -23,8 +23,16 @@ Open `01-upvote/app/index.html` in your favourite browser.
 
 ### 02: Calendar App
 
-Read `02-calendar_app/README.md`
+Read `02-calendar_app/README.md`. 
 
 ### 03: Custom Events
 
-Open `01-upvote/app/index.html` in your favourite browser. 
+Open `03-custom_events/app/index.html` in your favourite browser. 
+
+### 04: Vuex
+
+Open `04-note_taking/app/index.html` in your favourite browser. 
+
+### 05: Vuex and Servers
+
+Read `05-shopping_cart/README.md`. 
