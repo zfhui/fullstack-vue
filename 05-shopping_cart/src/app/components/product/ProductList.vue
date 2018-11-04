@@ -7,7 +7,7 @@
       <div class="product-list--item">
         <div>
           <h2 class="has-text-weight-bold">The Fullstack Hoodie
-            <span class="tag 
+            <span class="tag
                 is-primary
                 is-pulled-right
                 has-text-white">
@@ -29,9 +29,21 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import ProductListItem from './productListItem';
+
 export default {
   name: 'ProductList',
-}
+  computed: {
+    ...mapGetters(['productItems'])
+  },
+  created() {
+    this.$store.dispatch('getProductItems');
+  },
+  components: {
+    ProductListItem
+  }
+};
 </script>
 
 <style scoped>

@@ -1,6 +1,8 @@
-const state = {};
+const state = {
+};
 
-const mutations = {};
+const mutations = {
+};
 
 const actions = {};
 
@@ -13,4 +15,4 @@ const cartModule = {
   getters
 }
 
-export default cartModule; 
+export default cartModule;
