@@ -10,7 +10,7 @@
     </h2>
     <p>{{ productItem.description }}</p>
     <span class="has-text-primary has-text-weight-bold">
-      <i class="fa fa-usd"></i> 19.99
+      <i class="fa fa-usd"></i> {{ productItem.price }}
     </span>
   </div>
 </template>
